@@ -18,18 +18,6 @@
   justify-content: center;
   flex-wrap: wrap;
 
-  &--is-above-controls {
-    margin-bottom: 5rem;
-  }
-
-  &--is-above-bottom-nav {
-    margin-bottom: 4rem;
-  }
-
-  &--is-above-controls#{&}--is-above-bottom-nav {
-    margin-bottom: 8rem;
-  }
-
   &--will-appear {
     display: flex;
     opacity: 0;

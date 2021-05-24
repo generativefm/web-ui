@@ -12,16 +12,17 @@ const BottomNav = ({ hasBorder = false, hasShadow = true, navLinks = [] }) => {
         [styles['bottom-nav--has-border']]: hasBorder,
       })}
     >
-      {navLinks.map(({ Icon, label, to }) => {
+      {navLinks.map(({ Icon, label, to }) => (
         <NavLink
           className={styles['bottom-nav__link']}
           activeClassName={styles['bottom-nav__link--is-active']}
           to={to}
+          key={to}
         >
           <Icon />
           {label}
-        </NavLink>;
-      })}
+        </NavLink>
+      ))}
     </nav>
   );
 };
@@ -33,7 +34,7 @@ BottomNav.propTypes = {
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       to: PropTypes.string.isRequired,
-      Icon: PropTypes.element.isRequired,
+      Icon: PropTypes.elementType.isRequired,
     })
   ),
 };

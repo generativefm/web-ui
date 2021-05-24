@@ -6,7 +6,7 @@
   "scripts": {
     "test": "karma start --single-run",
     "lint": "eslint src",
-    "build": "rollup -c"
+    "build": "babel src --out-dir dist --ignore \"src/**/*.scss\" --copy-files"
   },
   "files": [
     "dist",
@@ -24,6 +24,8 @@
   "homepage": "https://github.com/generative-fm/web-ui#readme",
   "devDependencies": {
     "@alexbainter/eslint-config": "^0.1.2",
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
     "@babel/plugin-transform-runtime": "^7.14.3",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
