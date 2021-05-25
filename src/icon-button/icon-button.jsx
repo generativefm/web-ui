@@ -47,7 +47,7 @@ const IconButton = (props) => {
 
 IconButton.propTypes = {
   children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   withBackground: PropTypes.bool,
   isDisabled: PropTypes.bool,
   isActive: PropTypes.bool,
