@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '../../styles/_theme.scss';
 
 .switch {
@@ -6,7 +7,7 @@
   $diameter-cap: 1.33rem;
   position: relative;
   height: $diameter-cap;
-  width: $width-rail + $diameter-cap / 2;
+  width: $width-rail + math.div($diameter-cap, 2);
   background: none;
   border: none;
   cursor: pointer;
@@ -21,8 +22,8 @@
     height: $height-rail;
     border-radius: 5rem;
     position: absolute;
-    left: $diameter-cap / 2;
-    top: $diameter-cap / 2 - $height-rail / 2;
+    left: math.div($diameter-cap, 2);
+    top: math.div($diameter-cap, 2) - math.div($height-rail, 2);
   }
 
   &__cap {
@@ -31,7 +32,7 @@
     height: $diameter-cap;
     border-radius: 50%;
     position: absolute;
-    left: $height-rail / 2;
+    left: math.div($height-rail, 2);
     top: 0;
     transition: transform 200ms;
     box-shadow: $box-shadow-bottom;

@@ -1,0 +1,27 @@
+@import '../../styles/_theme.scss';
+
+.duration-input-digit {
+  font-size: 2rem;
+  border-right: 1px solid transparent;
+
+  &:first-of-type {
+    border-left: 1px solid transparent;
+  }
+
+  &:nth-of-type(4),
+  &:nth-of-type(7) {
+    margin-left: 0.5rem;
+  }
+
+  &--is-user-input {
+    color: $color-white;
+  }
+
+  &--is-editing#{&}--has-cursor {
+    border-right-color: $color-white;
+  }
+
+  &--is-editing#{&}--has-cursor-before {
+    border-left-color: $color-white !important; // TODO don't be lazy
+  }
+}

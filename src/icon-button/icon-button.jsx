@@ -15,6 +15,8 @@ const IconButton = (props) => {
     isSecondary = false,
     isTouched = false,
     title,
+    href,
+    isNewTabLink = true,
   } = props;
   const [hasBeenTouched, setHasBeenTouched] = useState(isTouched);
 
@@ -22,19 +24,40 @@ const IconButton = (props) => {
     setHasBeenTouched(true);
   }, []);
 
+  const className = classnames(styles['icon-button'], {
+    [styles['icon-button--has-background']]: withBackground,
+    [styles['icon-button--is-disabled']]: isDisabled,
+    [styles['icon-button--is-active']]: !isDisabled && isActive,
+    [styles['icon-button--is-ticking']]: !isDisabled && isActive && isTicking,
+    [styles['icon-button--is-floating']]: isFloating,
+    [styles['icon-button--is-not-touched']]: !hasBeenTouched,
+    [styles['icon-button--is-secondary']]: isSecondary,
+  });
+
+  if (typeof href === 'string') {
+    return (
+      <a
+        href={href}
+        className={className}
+        onTouchStart={handleTouchStart}
+        data-cy={props['data-cy']}
+        title={title}
+        {...(isNewTabLink
+          ? {
+              target: '_blank',
+              rel: 'noreferrer noopener',
+            }
+          : {})}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button
       type="button"
-      className={classnames(styles['icon-button'], {
-        [styles['icon-button--has-background']]: withBackground,
-        [styles['icon-button--is-disabled']]: isDisabled,
-        [styles['icon-button--is-active']]: !isDisabled && isActive,
-        [styles['icon-button--is-ticking']]:
-          !isDisabled && isActive && isTicking,
-        [styles['icon-button--is-floating']]: isFloating,
-        [styles['icon-button--is-not-touched']]: !hasBeenTouched,
-        [styles['icon-button--is-secondary']]: isSecondary,
-      })}
+      className={className}
       onClick={onClick}
       onTouchStart={handleTouchStart}
       data-cy={props['data-cy']}
@@ -56,6 +79,8 @@ IconButton.propTypes = {
   isSecondary: PropTypes.bool,
   isTouched: PropTypes.bool,
   title: PropTypes.string,
+  href: PropTypes.string,
+  isNewTabLink: PropTypes.string,
 };
 
 export default IconButton;

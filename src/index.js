@@ -7,6 +7,7 @@ export { default as useCreateContextMenuForMouseEvent } from './context-menu/use
 export { default as useCreateContextMenuForTarget } from './context-menu/use-create-context-menu-for-target';
 export { default as Dialog } from './dialog/dialog';
 export { default as Donate } from './donate/donate';
+export { default as DurationInput } from './duration-input/duration-input';
 export { default as IconButton } from './icon-button/icon-button';
 export { default as CircularLoadingIndicator } from './loading/circular-loading-indicator';
 export { default as retryable } from './loading/retryable';
