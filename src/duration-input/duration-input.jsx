@@ -187,6 +187,7 @@ DurationInput.propTypes = {
   value: PropTypes.number,
   onChange: PropTypes.func.isRequired,
   onFocus: PropTypes.func,
+  isAutoFocused: PropTypes.bool,
 };
 
 export default DurationInput;
