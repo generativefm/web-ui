@@ -1,5 +1,4 @@
 export { default as About } from './about/about';
-export { default as Banner } from './banner/banner';
 export { default as BottomNav } from './bottom-nav/bottom-nav';
 export { default as Checkbox } from './checkbox/checkbox';
 export { default as ContextMenuOption } from './context-menu/context-menu-option';
