@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import useActivePatrons from '../use-active-patrons';
 import styles from './about.module.scss';
 
-const ALEX_BAINTER_URL = 'https://alexbainter.com';
+const CONTACT_URL = 'https://contact.alexbainter.com';
 const DISCORD_INVITE_URL = 'https://discord.gg/3KPnkv2UbP';
 
 const formatPatronList = (patronNames) =>
@@ -107,7 +107,7 @@ const About = ({ version, productName, logoSrc, sourceCodeUrl }) => {
       <div className={styles['about__text']}>
         <h2 className={styles['about__text__subtitle']}>Contact</h2>
         <div>
-          <a href={ALEX_BAINTER_URL} target="_blank" rel="noreferrer noopener">
+          <a href={CONTACT_URL} target="_blank" rel="noreferrer noopener">
             Message me
           </a>{' '}
           or join the{' '}
