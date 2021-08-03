@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import useActivePatrons from '../use-active-patrons';
 import styles from './about.module.scss';
 
+const ALEX_BAINTER_URL = 'https://alexbainter.com';
 const CONTACT_URL = 'https://contact.alexbainter.com';
 const DISCORD_INVITE_URL = 'https://discord.gg/3KPnkv2UbP';
 
