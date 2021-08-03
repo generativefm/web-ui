@@ -10,6 +10,7 @@ const CURRENT_OBJECTIVE = 2500;
 const PATREON_URL = 'https://www.patreon.com/bePatron?u=2484731';
 const BANDCAMP_URL = 'https://alexbainter.bandcamp.com';
 const PAYPAL_URL = 'https://paypal.me/alexbainter';
+const CONTACT_URL = 'https://contact.alexbainter.com';
 
 const Donate = () => {
   const [shoutOutName, setShoutOutName] = useState();
@@ -204,11 +205,7 @@ const Donate = () => {
               Select a cryptocurrency to see an address where you can send
               payments. If you&apos;d prefer to use a cryptocurrency not listed
               here,{' '}
-              <a
-                href="https://alexbainter.com"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
+              <a href={CONTACT_URL} target="_blank" rel="noreferrer noopener">
                 get in touch
               </a>
               .{' '}
