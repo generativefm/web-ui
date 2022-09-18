@@ -69,8 +69,8 @@
 
   &__shout-out {
     width: 100%;
-    text-align: right;
-    margin-top: 3rem;
+    //    text-align: right;
+    //   margin-top: 3rem;
 
     &__message {
       @include type-normal();
@@ -127,7 +127,7 @@
     @include type-normal();
     color: $color-white;
     font-size: 1.25rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
 
   &__methods {

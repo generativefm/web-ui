@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import CryptoPicker from './crypto-picker';
-import usePledgeSum from './use-pledge-sum';
+//import usePledgeSum from './use-pledge-sum';
 import useActivePatrons from '../use-active-patrons';
-import Skeleton from '../loading/skeleton';
+//import Skeleton from '../loading/skeleton';
 import styles from './donate.module.scss';
 
-const CURRENT_OBJECTIVE = 2500;
+//const CURRENT_OBJECTIVE = 2500;
 const PATREON_URL = 'https://www.patreon.com/bePatron?u=2484731';
 const BANDCAMP_URL = 'https://alexbainter.bandcamp.com';
 const PAYPAL_URL = 'https://paypal.me/alexbainter';
@@ -15,7 +15,7 @@ const CONTACT_URL = 'https://contact.alexbainter.com';
 const Donate = () => {
   const [shoutOutName, setShoutOutName] = useState();
   const [isShowingShoutOut, setIsShowingShoutOut] = useState(false);
-  const pledgeSum = usePledgeSum();
+  //  const pledgeSum = usePledgeSum();
   const activePatrons = useActivePatrons();
 
   useEffect(() => {
@@ -65,36 +65,14 @@ const Donate = () => {
     <div className={styles.donate}>
       <h1 className={styles['donate__title']}>Donate</h1>
       <h2 className={styles['donate__subtitle']}>
-        Help establish full-time development of Generative.fm
+        Sponsoring Generative.fm Development
       </h2>
-      <div className={styles['donate__campaign']}>
-        <div className={styles['donate__campaign__metric']}>
-          <div className={styles['donate__campaign__metric__current']}>
-            Current monthly support:
-          </div>
-          <div className={styles['donate__campaign__metric__objective']}>
-            Full-time dedication at:
-          </div>
-        </div>
-        <div className={styles['donate__campaign__metric']}>
-          <div className={styles['donate__campaign__metric__current']}>
-            <Skeleton isLoading={pledgeSum === null}>
-              ${pledgeSum || 'XXX'}
-            </Skeleton>
-          </div>
-          <div className={styles['donate__campaign__metric__objective']}>
-            ${CURRENT_OBJECTIVE}
-          </div>
-        </div>
-        <div className={styles['donate__campaign__meter']}>
-          <div className={styles['donate__campaign__meter__track']} />
-          <div
-            className={styles['donate__campaign__meter__fill']}
-            style={{
-              width: `${Math.min(pledgeSum / CURRENT_OBJECTIVE, 1) * 100}%`,
-            }}
-          />
-        </div>
+      <div className={styles['donate__text']}>
+        Generative.fm is available completely free of charge and ad-free.
+        However, maintaining the service and developing new features is not
+        sustainable without financial support. Please consider making a payment
+        comparable to what you pay for similar services, or what you might
+        expect to pay for this one.
       </div>
       <div className={styles['donate__shout-out']}>
         <CSSTransition
@@ -131,16 +109,6 @@ const Donate = () => {
             )}
           </a>
         </CSSTransition>
-      </div>
-      <h2 className={styles['donate__subtitle']}>
-        Sponsoring Generative.fm Development
-      </h2>
-      <div className={styles['donate__text']}>
-        Generative.fm is available completely free of charge and ad-free.
-        However, maintaining the service and developing new features is not
-        sustainable without financial support. Please consider making a payment
-        comparable to what you pay for similar services, or what you might
-        expect to pay for this one.
       </div>
       <h2 className={styles['donate__subtitle']}>How to pay</h2>
       <div className={styles['donate__methods']}>
