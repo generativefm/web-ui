@@ -50,7 +50,7 @@
     "reset-css": "^5.0.1"
   },
   "peerDependencies": {
-    "@material-ui/icons": "^4.11.2",
+    "@material-ui/icons": "^4.12.0",
     "react": "^17.0.2",
     "react-router-dom": "^5.2.0"
   },
