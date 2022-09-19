@@ -8,7 +8,7 @@ import styles from './about.module.scss';
 
 const ALEX_BAINTER_URL = 'https://alexbainter.com';
 const CONTACT_URL = 'https://contact.alexbainter.com';
-const DISCORD_INVITE_URL = 'https://discord.gg/3KPnkv2UbP';
+//const DISCORD_INVITE_URL = 'https://discord.gg/3KPnkv2UbP';
 
 const formatPatronList = (patronNames) =>
   patronNames.map((name, i) => {
