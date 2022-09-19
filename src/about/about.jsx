@@ -109,17 +109,8 @@ const About = ({ version, productName, logoSrc, sourceCodeUrl }) => {
         <h2 className={styles['about__text__subtitle']}>Contact</h2>
         <div>
           <a href={CONTACT_URL} target="_blank" rel="noreferrer noopener">
-            Message me
-          </a>{' '}
-          or join the{' '}
-          <a
-            href={DISCORD_INVITE_URL}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Generative.fm Discord server
+            Message me.
           </a>
-          .
         </div>
         <h2 className={styles['about__text__subtitle']}>
           Generative.fm Sponsors
