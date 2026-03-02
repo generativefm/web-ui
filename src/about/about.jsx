@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import classnames from 'classnames';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import useActivePatrons from '../use-active-patrons';
 import styles from './about.module.scss';
