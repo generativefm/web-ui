@@ -46,6 +46,8 @@ const About = ({ version, productName, logoSrc, sourceCodeUrl }) => {
       }, groups);
   }, [activePatrons]);
 
+  const hasActivePatrons = Boolean(activePatrons && activePatrons.length);
+
   const seeders = patronGroups.get(30);
   const fans = patronGroups.get(20);
   const benefactors = patronGroups.get(10);
@@ -111,46 +113,48 @@ const About = ({ version, productName, logoSrc, sourceCodeUrl }) => {
             Message me.
           </a>
         </div>
-        <h2 className={styles['about__text__subtitle']}>
-          Generative.fm Sponsors
-        </h2>
-        {activePatrons && activePatrons.length > 0 && (
-          <div>
-            Generative.fm is a pay-what-you-want service made possible with
-            funding from the following:
-          </div>
+        {hasActivePatrons && (
+          <>
+            <h2 className={styles['about__text__subtitle']}>
+              Generative.fm Sponsors
+            </h2>
+            <div>
+              Generative.fm is a pay-what-you-want service made possible with
+              funding from the following:
+            </div>
+            <div
+              className={classnames(
+                styles['about__text__sponsors'],
+                styles['about__text__sponsors--seeders']
+              )}
+            >
+              {formatPatronList(seeders)}
+            </div>
+            {seeders.length > 0 && (
+              <div className={styles['about__text__sponsor-message']}>
+                The name{seeders.length > 1 ? 's' : ''} above{' '}
+                {seeders.length > 1 ? 'are' : 'is'} used to seed the random
+                number generator.
+              </div>
+            )}
+            <div
+              className={classnames(
+                styles['about__text__sponsors'],
+                styles['about__text__sponsors--fans']
+              )}
+            >
+              {formatPatronList(fans)}
+            </div>
+            <div
+              className={classnames(
+                styles['about__text__sponsors'],
+                styles['about__text__sponsors--benefactors']
+              )}
+            >
+              {formatPatronList(benefactors)}
+            </div>
+          </>
         )}
-        <div
-          className={classnames(
-            styles['about__text__sponsors'],
-            styles['about__text__sponsors--seeders']
-          )}
-        >
-          {formatPatronList(seeders)}
-        </div>
-        {seeders.length > 0 && (
-          <div className={styles['about__text__sponsor-message']}>
-            The name{seeders.length > 1 ? 's' : ''} above{' '}
-            {seeders.length > 1 ? 'are' : 'is'} used to seed the random number
-            generator.
-          </div>
-        )}
-        <div
-          className={classnames(
-            styles['about__text__sponsors'],
-            styles['about__text__sponsors--fans']
-          )}
-        >
-          {formatPatronList(fans)}
-        </div>
-        <div
-          className={classnames(
-            styles['about__text__sponsors'],
-            styles['about__text__sponsors--benefactors']
-          )}
-        >
-          {formatPatronList(benefactors)}
-        </div>
       </div>
     </div>
   );
