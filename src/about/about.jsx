@@ -115,10 +115,12 @@ const About = ({ version, productName, logoSrc, sourceCodeUrl }) => {
         <h2 className={styles['about__text__subtitle']}>
           Generative.fm Sponsors
         </h2>
-        <div>
-          Generative.fm is a pay-what-you-want service made possible with
-          funding from the following:
-        </div>
+        {activePatrons && activePatrons.length > 0 && (
+          <div>
+            Generative.fm is a pay-what-you-want service made possible with
+            funding from the following:
+          </div>
+        )}
         <div
           className={classnames(
             styles['about__text__sponsors'],
@@ -149,10 +151,6 @@ const About = ({ version, productName, logoSrc, sourceCodeUrl }) => {
           )}
         >
           {formatPatronList(benefactors)}
-        </div>
-        <div>
-          Please consider <Link to="/donate">sponsoring</Link> the development
-          of Generative.fm.
         </div>
       </div>
     </div>
